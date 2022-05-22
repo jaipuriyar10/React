@@ -6,7 +6,7 @@ class App extends React.Component {
     //initialise constructor at the first and call super() method with props following the compulsion of react
   constructor(props) {
     super(props);
-    this.state = { lat: null,errorMessage:null };
+    this.state = { lat: null,errorMessage:null ,count:0};
     window.navigator.geolocation.getCurrentPosition(
       (pos) => {
           //use setState for updating the state 
@@ -17,6 +17,14 @@ class App extends React.Component {
       }
     );
   }
+
+  componentDidMount(){
+      console.log(`----compoenent mount for the first time`);
+  }
+  componentDidUpdate(){
+      console.log(`----component updated and rerendered`);
+  }
+
   //render as per the compulsion of react
   render() {
       if(this.state.errorMessage && !this.state.lat)
