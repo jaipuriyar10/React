@@ -7,23 +7,22 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = { lat: null,errorMessage:null ,count:0};
-    window.navigator.geolocation.getCurrentPosition(
-      (pos) => {
-          //use setState for updating the state 
-        this.setState({ lat: pos.coords.latitude });
-      },
-      (err) => {
-          this.setState({errorMessage:err.message});
-      }
-    );
+
   }
 
   componentDidMount(){
-      console.log(`----compoenent mount for the first time`);
-  }
-  componentDidUpdate(){
-      console.log(`----component updated and rerendered`);
-  }
+    window.navigator.geolocation.getCurrentPosition(
+    pos => 
+            //use setState for updating the state 
+          this.setState({ lat: pos.coords.latitude }),
+    
+        err => 
+            this.setState({errorMessage:err.message})
+        
+      );
+    };
+  
+
 
   //render as per the compulsion of react
   render() {
