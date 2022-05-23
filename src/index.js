@@ -3,12 +3,9 @@ import ReactDOM from "react-dom";
 
 class App extends React.Component {
 
-    //initialise constructor at the first and call super() method with props following the compulsion of react
-  constructor(props) {
-    super(props);
-    this.state = { lat: null,errorMessage:null ,count:0};
+ 
+    state={lat:null,errorMessage:null};
 
-  }
 
   componentDidMount(){
     window.navigator.geolocation.getCurrentPosition(
