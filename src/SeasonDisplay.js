@@ -2,7 +2,8 @@ import React from "react";
 
 const season = (lat,month)=>{
     //using ternary operator 
-    return (lat>0)?((month>2 && month<9) ?'Summer':'Winter'):((month>2 && month<9)?'Winter':'Summer');
+    return (lat>0)?(month>2 && month<9)?'Summer':'Winter':(month>2 && month<9)?'Winter':'Summer';
+
 };
 
 
